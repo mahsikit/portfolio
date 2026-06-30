@@ -1,37 +1,25 @@
 ---
-// Skills — 4 grouped pill clusters
 const groups = [
-  {
-    label: 'Languages & Query',
-    skills: ['SQL', 'Python', 'dbt'],
-  },
-  {
-    label: 'Cloud & Warehouse',
-    skills: ['Snowflake', 'BigQuery', 'GCP', 'AWS Redshift', 'Teradata', 'SQL Server'],
-  },
-  {
-    label: 'BI & Reporting',
-    skills: ['Tableau', 'Power BI', 'Metabase', 'SAP BusinessObjects'],
-  },
-  {
-    label: 'Engineering',
-    skills: ['Docker', 'Prefect', 'SAP Data Services', 'Data Modelling', 'Data Warehousing', 'GitHub Actions'],
-  },
+  { label: 'Languages & Query',  skills: ['SQL', 'Python', 'dbt'] },
+  { label: 'Cloud & Warehouse',  skills: ['Snowflake', 'BigQuery', 'GCP', 'AWS Redshift', 'Teradata', 'SQL Server'] },
+  { label: 'BI & Reporting',     skills: ['Tableau', 'Power BI', 'Metabase', 'SAP BusinessObjects'] },
+  { label: 'Engineering',        skills: ['Docker', 'Prefect', 'SAP Data Services', 'Data Modelling', 'Data Warehousing', 'GitHub Actions'] },
 ];
 ---
 
-<section id="skills" class="py-20">
+<section id="skills" class="py-24">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="fade-in mb-12">
-      <h2 class="text-2xl font-bold text-slate-100 mb-1">Skills</h2>
-      <div class="w-10 h-0.5 bg-sky-400"></div>
+    <div class="fade-in mb-14">
+      <span class="section-marker">// 03</span>
+      <h2 class="text-2xl font-bold text-[#d8eaf5]">Skills</h2>
+      <div class="w-8 h-[1.5px] mt-2" style="background: linear-gradient(to right, #00e5b4, transparent);"></div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
       {groups.map(({ label, skills }) => (
         <div class="fade-in">
-          <h3 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">{label}</h3>
+          <h3 class="text-[11px] font-mono text-[#00e5b4] uppercase tracking-[0.15em] opacity-60 mb-3">{label}</h3>
           <div class="flex flex-wrap gap-2">
             {skills.map((s) => (
               <span class="skill-pill">{s}</span>

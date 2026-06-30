@@ -1,49 +1,46 @@
 ---
-// Experience — vertical timeline, 2 entries, vague company names
+// Experience
 ---
 
-<section id="experience" class="py-20">
+<section id="experience" class="py-24">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="fade-in mb-12">
-      <h2 class="text-2xl font-bold text-slate-100 mb-1">Experience</h2>
-      <div class="w-10 h-0.5 bg-sky-400"></div>
+    <div class="fade-in mb-14">
+      <span class="section-marker">// 01</span>
+      <h2 class="text-2xl font-bold text-[#d8eaf5]">Experience</h2>
+      <div class="w-8 h-[1.5px] mt-2" style="background: linear-gradient(to right, #00e5b4, transparent);"></div>
     </div>
 
-    <div class="relative pl-8 border-l-2 border-slate-700 space-y-12">
+    <div class="relative pl-8 space-y-14" style="border-left: 1px solid #162d48;">
 
-      <!-- Entry 1 — current role -->
+      <!-- Entry 1 — current -->
       <div class="fade-in relative">
-        <!-- Timeline dot -->
-        <div class="absolute -left-[2.35rem] top-1 w-3 h-3 rounded-full bg-sky-400 ring-4 ring-slate-900"></div>
+        <div class="absolute -left-[2.35rem] top-1 w-2.5 h-2.5 rounded-full bg-[#00e5b4]"
+             style="box-shadow: 0 0 0 3px #060e1c, 0 0 0 5px rgba(0,229,180,0.3);"></div>
 
-        <span class="inline-block text-xs font-mono text-slate-400 mb-2">Apr 2024 – Present</span>
-        <h3 class="text-lg font-semibold text-slate-100 leading-snug">
+        <span class="inline-block text-xs font-mono text-[#00e5b4] mb-2 opacity-70 tracking-wider">
+          Apr 2024 – Present
+        </span>
+        <h3 class="text-lg font-semibold text-[#d8eaf5] leading-snug">
           Senior Data Analyst
-          <span class="text-slate-400 font-normal"> — an Indonesian insurtech, Jakarta</span>
+          <span class="text-[#5a7a96] font-normal"> — an Indonesian insurtech, Jakarta</span>
         </h3>
 
-        <ul class="mt-3 space-y-1.5 text-sm text-slate-300">
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Built a dbt data warehouse replacing 4–6 hr/day manual Excel workflows, reducing reporting time to under 10 minutes
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Designed Tableau dashboards presented directly to the Board of Directors for weekly insurance portfolio reviews
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Developed dbt models across health, motor, marine, and reinsurance lines of business
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Automated data pipelines for claim, premium, and policy reporting across multiple insurance products
-          </li>
+        <ul class="mt-4 space-y-2 text-sm text-[#8fb0cc]">
+          {[
+            'Built a dbt data warehouse replacing 4–6 hr/day manual Excel workflows, reducing reporting time to under 10 minutes',
+            'Designed Tableau dashboards presented directly to the Board of Directors for weekly insurance portfolio reviews',
+            'Developed dbt models across health, motor, marine, and reinsurance lines of business',
+            'Automated data pipelines for claim, premium, and policy reporting across multiple insurance products',
+          ].map((item) => (
+            <li class="flex gap-2.5">
+              <span class="text-[#00e5b4] mt-0.5 shrink-0 font-mono">›</span>
+              {item}
+            </li>
+          ))}
         </ul>
 
-        <!-- Tech tags -->
-        <div class="mt-4 flex flex-wrap gap-2">
+        <div class="mt-5 flex flex-wrap gap-2">
           {['dbt', 'Databricks', 'AWS Redshift', 'Python', 'SQL', 'Tableau', 'Metabase'].map((t) => (
             <span class="skill-pill">{t}</span>
           ))}
@@ -52,34 +49,32 @@
 
       <!-- Entry 2 -->
       <div class="fade-in relative">
-        <div class="absolute -left-[2.35rem] top-1 w-3 h-3 rounded-full bg-slate-500 ring-4 ring-slate-900"></div>
+        <div class="absolute -left-[2.35rem] top-1 w-2.5 h-2.5 rounded-full bg-[#0c1a2d]"
+             style="border: 1.5px solid #4d94ff; box-shadow: 0 0 0 3px #060e1c;"></div>
 
-        <span class="inline-block text-xs font-mono text-slate-400 mb-2">Feb 2023 – Feb 2024</span>
-        <h3 class="text-lg font-semibold text-slate-100 leading-snug">
+        <span class="inline-block text-xs font-mono text-[#5a7a96] mb-2 tracking-wider">
+          Feb 2023 – Feb 2024
+        </span>
+        <h3 class="text-lg font-semibold text-[#d8eaf5] leading-snug">
           Business Intelligence Analyst
-          <span class="text-slate-400 font-normal"> — a major Indonesian mining company, Jakarta</span>
+          <span class="text-[#5a7a96] font-normal"> — a major Indonesian mining company, Jakarta</span>
         </h3>
 
-        <ul class="mt-3 space-y-1.5 text-sm text-slate-300">
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Led full Teradata-to-Snowflake migration, including ETL pipeline build and data validation
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Built a SAP BusinessObjects data mart for the UOMS division, consolidating operational data sources
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Delivered Power BI dashboards for the dewatering operations team, improving real-time visibility
-          </li>
-          <li class="flex gap-2">
-            <span class="text-sky-400 mt-0.5 shrink-0">·</span>
-            Worked in an Agile / daily-scrum environment within a cross-functional data team
-          </li>
+        <ul class="mt-4 space-y-2 text-sm text-[#8fb0cc]">
+          {[
+            'Led full Teradata-to-Snowflake migration, including ETL pipeline build and data validation',
+            'Built a SAP BusinessObjects data mart for the UOMS division, consolidating operational data sources',
+            'Delivered Power BI dashboards for the dewatering operations team, improving real-time visibility',
+            'Worked in an Agile / daily-scrum environment within a cross-functional data team',
+          ].map((item) => (
+            <li class="flex gap-2.5">
+              <span class="text-[#4d94ff] mt-0.5 shrink-0 font-mono">›</span>
+              {item}
+            </li>
+          ))}
         </ul>
 
-        <div class="mt-4 flex flex-wrap gap-2">
+        <div class="mt-5 flex flex-wrap gap-2">
           {['Teradata', 'Snowflake', 'SAP BusinessObjects', 'Power BI', 'SAP Data Services'].map((t) => (
             <span class="skill-pill">{t}</span>
           ))}

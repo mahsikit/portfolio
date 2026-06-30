@@ -19,37 +19,61 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="author" content="Jonathan Santoso" />
-    <!-- OG / social -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-slate-900 text-slate-100 font-sans antialiased">
+  <body class="antialiased">
     <slot />
 
-    <!-- Scroll-reveal: fade-in-on-scroll using IntersectionObserver -->
     <script is:inline>
       (function () {
-        const observer = new IntersectionObserver(
+        // Scroll-reveal
+        const revealObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.12 }
+          { threshold: 0.1 }
         );
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach((el) => revealObserver.observe(el));
+
+        // Stat counter — counts up when the element scrolls into view
+        const countEls = document.querySelectorAll('[data-count]');
+        const countObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              const target = parseFloat(el.dataset.count);
+              const suffix = el.dataset.suffix || '';
+              const isDecimal = String(target).includes('.');
+              const duration = 1400;
+              const startTime = performance.now();
+              const tick = (now) => {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const val = eased * target;
+                el.textContent = (isDecimal ? val.toFixed(2) : Math.floor(val)) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+              };
+              requestAnimationFrame(tick);
+              countObserver.unobserve(el);
+            });
+          },
+          { threshold: 0.6 }
+        );
+        countEls.forEach((el) => countObserver.observe(el));
       })();
     </script>
   </body>
