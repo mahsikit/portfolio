@@ -1,0 +1,76 @@
+---
+// Certifications — 5 cert cards + 1 wide publication card
+const certs = [
+  {
+    emoji: '🏆',
+    name: 'Power BI Data Analyst Associate',
+    issuer: 'Microsoft',
+  },
+  {
+    emoji: '☁️',
+    name: 'Azure Data Fundamentals',
+    issuer: 'Microsoft',
+  },
+  {
+    emoji: '📊',
+    name: 'Certified Data Analyst',
+    issuer: 'Tableau',
+  },
+  {
+    emoji: '🐍',
+    name: 'Python Essentials 1',
+    issuer: 'Cisco',
+  },
+  {
+    emoji: '🔍',
+    name: 'Foundations: Data, Data, Everywhere',
+    issuer: 'Google',
+  },
+];
+---
+
+<section id="certifications" class="py-20 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="fade-in mb-12">
+      <h2 class="text-2xl font-bold text-slate-100 mb-1">Certifications & Publication</h2>
+      <div class="w-10 h-0.5 bg-sky-400"></div>
+    </div>
+
+    <!-- Cert cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+      {certs.map(({ emoji, name, issuer }) => (
+        <div class="fade-in bg-slate-800 border border-slate-700 rounded-xl p-4 flex items-start gap-3">
+          <span class="text-2xl leading-none mt-0.5">{emoji}</span>
+          <div>
+            <p class="text-sm font-semibold text-slate-100 leading-snug">{name}</p>
+            <p class="text-xs text-slate-400 mt-0.5">{issuer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Publication card (wider) -->
+    <div class="fade-in bg-slate-800 border border-sky-900/50 rounded-xl p-5 flex items-start gap-4">
+      <span class="text-2xl leading-none mt-0.5 shrink-0">📄</span>
+      <div class="flex-1">
+        <p class="text-sm font-semibold text-slate-100 leading-snug">
+          Sentiment Analysis on Google Play Store User Reviews of Digital Bank Applications in Indonesia
+        </p>
+        <p class="text-xs text-slate-400 mt-1">Springer · March 2024</p>
+      </div>
+      <a
+        href="https://doi.org/10.1007/978-3-031-54019-6_29"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 hover:text-sky-300 transition-colors self-start mt-0.5 group"
+      >
+        Read Paper
+        <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

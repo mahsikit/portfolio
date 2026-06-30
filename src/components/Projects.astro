@@ -1,0 +1,85 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Pharma Price Optimizer',
+    tags: ['Python', 'Streamlit', 'Docker'],
+    description:
+      'Compares drug prices across three online pharmacies against a regulatory price database to surface the best deal for each product.',
+    githubSlug: 'pharma-price-optimizer',
+  },
+  {
+    title: 'Motor Insurance Price Crawler',
+    tags: ['Python', 'GitHub Actions', 'openpyxl'],
+    description:
+      'Scheduled scraper that pulls motor-insurance premium rates from insurer APIs and stores structured results in Excel for competitive analysis.',
+    githubSlug: 'motor-insurance-price-crawler',
+  },
+  {
+    title: 'Health Claim Data Puller',
+    tags: ['Python', 'Playwright', 'Streamlit', 'Docker'],
+    description:
+      'Browser-automation tool that logs into a legacy health-claim portal, extracts claim records, and surfaces them through a Streamlit UI.',
+    githubSlug: 'health-claim-data-puller',
+  },
+  {
+    title: 'User Export Automation',
+    tags: ['Python', 'Metabase API', 'Google Drive'],
+    description:
+      'Fetches filtered user-data exports from Metabase, applies business rules, formats Excel output, and uploads the results to Google Drive automatically.',
+    githubSlug: 'user-export-automation',
+  },
+  {
+    title: 'Claims Portal Scraper',
+    tags: ['Python', 'Streamlit', 'PostgreSQL', 'Docker'],
+    description:
+      'Scrapes a ColdFusion-based claims portal, syncs records to PostgreSQL, and provides a Streamlit dashboard for claim status tracking.',
+    githubSlug: 'claims-portal-scraper',
+  },
+  {
+    title: 'NAS → Cloud Sync',
+    tags: ['Python', 'SMB', 'Google Drive', 'Sheets'],
+    description:
+      'Mounts a network-attached storage share over SMB and mirrors new or changed files to Google Drive, logging every transfer to Google Sheets.',
+    githubSlug: 'nas-cloud-sync',
+  },
+  {
+    title: 'Claim Report Pipeline',
+    tags: ['Python', 'Gmail API', 'Google Drive'],
+    description:
+      'Reads claim reports from Gmail, computes period-over-period diffs, and drafts summary emails with Google Drive attachment links for review.',
+    githubSlug: 'claim-report-pipeline',
+  },
+  {
+    title: 'Monthly Report Tool',
+    tags: ['Python', 'Streamlit', 'Docker'],
+    description:
+      'End-to-end monthly reporting tool that pulls data from Metabase, generates Excel pivot summaries, and presents a Streamlit interface for review.',
+    githubSlug: 'monthly-report-tool',
+  },
+];
+---
+
+<section id="projects" class="py-20 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="fade-in mb-12">
+      <h2 class="text-2xl font-bold text-slate-100 mb-1">Projects</h2>
+      <div class="w-10 h-0.5 bg-sky-400 mb-3"></div>
+      <p class="text-sm text-slate-400 max-w-xl">
+        Production tools built to automate workflows in insurance and data operations.
+        Each project is anonymised — real tech, real impact.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projects.map((p) => (
+        <div class="fade-in">
+          <ProjectCard {...p} />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
