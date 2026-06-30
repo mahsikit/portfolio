@@ -1,7 +1,7 @@
 ---
 import ProjectCard from './ProjectCard.astro';
 
-const projects = [
+const productionProjects = [
   {
     title: 'Pharma Price Optimizer',
     tags: ['Python', 'Streamlit', 'Docker'],
@@ -59,22 +59,112 @@ const projects = [
     githubSlug: 'monthly-report-tool',
   },
 ];
+
+const analyticsProjects = [
+  {
+    title: 'Bitter-Pill Pharmacy Data Warehouse',
+    tags: ['SQL Server', 'SSIS', 'OLAP', 'ETL'],
+    description:
+      'End-to-end data warehouse for a fictional pharmacy chain: SSIS ETL pipelines, OLAP cube, and pivot-table reporting on sales and inventory.',
+    githubSlug: 'Bitter-Pill-Pharmacy-DW',
+  },
+  {
+    title: 'IMDb Movies Dashboard',
+    tags: ['Power BI', 'Data Viz'],
+    description:
+      'Interactive Power BI dashboard exploring IMDb ratings, genres, and trends across thousands of film titles.',
+    githubSlug: 'Dashboard-of-IMDb',
+  },
+  {
+    title: 'COVID-19 Indonesia Dashboard',
+    tags: ['Power BI', 'Data Viz'],
+    description:
+      'Power BI dashboard tracking daily confirmed cases, recoveries, and fatalities across provinces in Indonesia through September 2021.',
+    githubSlug: 'Perkembangan-Covid',
+  },
+  {
+    title: 'Retail SQL Query Project',
+    tags: ['SQL Server', 'T-SQL'],
+    description:
+      'Collection of DQL (Data Query Language) queries against a retail database — joins, aggregations, subqueries, and window functions.',
+    githubSlug: 'DQL-Project',
+  },
+  {
+    title: 'Company Database Design',
+    tags: ['SQL Server', 'ERD', 'Database Design'],
+    description:
+      'Designed and implemented a relational database for a company with full ERD, DDL schema, DML seed data, and SELECT query demonstrations.',
+    githubSlug: 'NTESLE-Database-company',
+  },
+  {
+    title: 'SQL LeetCode Solutions',
+    tags: ['SQL', 'Problem Solving'],
+    description:
+      'Solutions to 25+ SQL problems on LeetCode covering joins, ranking functions, aggregations, and date logic — organised by problem number.',
+    githubSlug: 'Leetcodes-SQL',
+  },
+  {
+    title: 'Data Engineering Zoomcamp',
+    tags: ['Python', 'Docker', 'PostgreSQL'],
+    description:
+      'Week-1 homework from the DataTalks.Club Data Engineering Zoomcamp: containerised data ingestion pipeline loading NYC taxi data into PostgreSQL.',
+    githubSlug: 'homework-zoomcamp-1',
+  },
+  {
+    title: 'MLBB Meta Advisor',
+    tags: ['Next.js', 'Supabase', 'OpenAI', 'TypeScript'],
+    description:
+      'AI-powered web app for Mobile Legends: Bang Bang — recommends hero picks and counter-picks based on the current patch meta.',
+    liveUrl: 'https://www.mlbbadvisor.com',
+  },
+  {
+    title: 'Point of Sale (POS) App',
+    tags: ['Java', 'Swing', 'MySQL'],
+    description:
+      'Desktop POS application for retail stores built with Java Swing and MySQL — handles sales entry, stock updates, and user login.',
+    githubSlug: 'POS',
+  },
+  {
+    title: 'Game Catalog (Stim)',
+    tags: ['Java', 'MySQL'],
+    description:
+      'Java desktop app for browsing and managing a game library with MySQL persistence — built as a university project.',
+    githubSlug: 'Stim',
+  },
+];
 ---
 
 <section id="projects" class="py-20 bg-slate-900/50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    <!-- Section header -->
     <div class="fade-in mb-12">
       <h2 class="text-2xl font-bold text-slate-100 mb-1">Projects</h2>
-      <div class="w-10 h-0.5 bg-sky-400 mb-3"></div>
-      <p class="text-sm text-slate-400 max-w-xl">
-        Production tools built to automate workflows in insurance and data operations.
-        Each project is anonymised — real tech, real impact.
-      </p>
+      <div class="w-10 h-0.5 bg-sky-400"></div>
     </div>
 
+    <!-- Group 1: Production Tools -->
+    <div class="fade-in mb-3">
+      <h3 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-6">
+        Production Tools
+      </h3>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+      {productionProjects.map((p) => (
+        <div class="fade-in">
+          <ProjectCard {...p} />
+        </div>
+      ))}
+    </div>
+
+    <!-- Group 2: Data, Analytics & Earlier Work -->
+    <div class="fade-in mb-3">
+      <h3 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-6">
+        Data, Analytics &amp; Earlier Work
+      </h3>
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {projects.map((p) => (
+      {analyticsProjects.map((p) => (
         <div class="fade-in">
           <ProjectCard {...p} />
         </div>

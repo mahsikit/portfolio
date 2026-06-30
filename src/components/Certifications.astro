@@ -47,7 +47,7 @@ const certs = [
       {certs.map(({ logo, logoBg, name, issuer }) => (
         <div class="fade-in bg-slate-800 border border-slate-700 rounded-xl p-4 flex items-start gap-3">
           <div class={`shrink-0 w-10 h-10 rounded-lg flex items-center justify-center p-1.5 ${logoBg || 'bg-slate-700'}`}>
-            <img src={logo} alt={issuer + ' logo'} class="w-full h-full object-contain" loading="lazy" />
+            <img src={logo} alt={issuer + ' logo'} class="w-full h-full object-contain" />
           </div>
           <div>
             <p class="text-sm font-semibold text-slate-100 leading-snug">{name}</p>
